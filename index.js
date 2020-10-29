@@ -95,15 +95,22 @@ function processFirstItem(stringList, callback) {
   let awayTeam = 0;
   
   for(let i = 0; i < numOfInnings; i++){
-    if(i < numOfInnings){
-      homeTeam += inning();
-      awayTeam += inning();
-      console.log('${counterMaker()} inning: ${awayTeam} - ${homeTeam}')
+    homeTeam += inning();
+    awayTeam += inning();
+    if(i === 1){
+      console.log('${i}st inning: ${awayTeam} - ${homeTeam}');
+    }
+    else if(i === 2) {
+      console.log('${i}nd inning: ${awayTeam} - ${homeTeam}')
+    }
+    else if(i === 3) {
+      console.log('${i}rd inning: ${awayTeam} - ${homeTeam')
     }
     else {
-      console.log('Final Score: ${awayTeam} - ${homeTeam}')
+      console.log('${i}th inning: ${awayTeam} - ${homeTeam}')
     }
   }
- }
+  console.log('Final Score: ${awayTeam} - ${homeTeam')
+}
   
-  console.log(scoreboard(inning, 9))
+console.log(scoreboard(inning, 9))
