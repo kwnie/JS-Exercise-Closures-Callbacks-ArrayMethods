@@ -91,26 +91,28 @@ function processFirstItem(stringList, callback) {
  9th inning: awayTeam - homeTeam
   Final Score: awayTeam - homeTeam */
   function scoreboard(inning, numOfInnings) {
-  let homeTeam = 0;
-  let awayTeam = 0;
+  let score = {
+    homeTeam: 0,
+    awayTeam: 0,
+  }
   
   for(let i = 0; i < numOfInnings; i++){
-    homeTeam += inning();
-    awayTeam += inning();
+    score.homeTeam += inning();
+    score.awayTeam += inning();
     if(i === 1){
-      console.log('${i}st inning: ${awayTeam} - ${homeTeam}');
+      console.log('${i}st inning: ${score.awayTeam} - ${score.homeTeam}');
     }
     else if(i === 2) {
-      console.log('${i}nd inning: ${awayTeam} - ${homeTeam}')
+      console.log('${i}nd inning: ${score.awayTeam} - ${score.homeTeam}')
     }
     else if(i === 3) {
-      console.log('${i}rd inning: ${awayTeam} - ${homeTeam')
+      console.log('${i}rd inning: ${score.awayTeam} - ${score.homeTeam}')
     }
     else {
-      console.log('${i}th inning: ${awayTeam} - ${homeTeam}')
+      console.log('${i}th inning: ${score.awayTeam} - ${score.homeTeam}')
     }
   }
-  console.log('Final Score: ${awayTeam} - ${homeTeam')
+  console.log('Final Score: ${score.awayTeam} - ${score.homeTeam}')
 }
   
 console.log(scoreboard(inning, 9))
